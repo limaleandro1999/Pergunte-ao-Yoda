@@ -13,17 +13,26 @@
                 $("#tela2").hide();
 
                 $("#adivinhar").click(function(){
-                    $("#tela1").hide();
-                    $("#tela2").show();
-                    var numero = Math.floor(Math.random() * 2);
-                    
-                    if (numero == 0){
-                        var texto = document.getElementById("1").value;
-                        document.getElementById("resultado").innerHTML = texto;
+                    var texto1 = document.getElementById("1").value;
+                    var texto2 = document.getElementById("2").value;
+
+                    if(texto1 == ""){
+                        alert("Preencher todos os campos, você precisa.");
+                    }
+                    else if(texto2 == ""){
+                         alert("Preencher todos os campos, você precisa.");
                     }
                     else{
-                        var texto = document.getElementById("2").value;
-                        document.getElementById("resultado").innerHTML = texto;
+                        $("#tela1").hide();
+                        $("#tela2").show();
+                        var numero = Math.floor(Math.random() * 2);
+                        
+                        if (numero == 0){
+                            document.getElementById("resultado").innerHTML = texto1;
+                        }
+                        else{ 
+                            document.getElementById("resultado").innerHTML = texto2;
+                        }
                     }
                 });
 
